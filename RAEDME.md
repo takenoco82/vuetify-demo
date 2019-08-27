@@ -82,3 +82,15 @@ upported by default): (Use arrow keys)
 $ cd demo-project
 $ yarn serve
 ```
+
+
+## Vuetifyの追加
+``` sh
+$ vue add vuetify
+
+# プリセットの選択
+? Choose a preset: (Use arrow keys)
+❯ Default (recommended)         # ← 今回はこれを選択
+  Prototype (rapid development)
+  Configure (advanced)
+```
