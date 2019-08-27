@@ -24,8 +24,10 @@ export default {
     login() {
       console.log("login clicked");
       console.log(`username=${this.username},password=${this.password}`);
-
-      // TODO ログインモジュールを実行する
+      // TODO ホントはアクセストークンをローカルストレージに保存する
+      // ストアにユーザ情報を保存する
+      this.$store.commit("setUserName", this.username);
+      this.$router.push("top");
     }
   }
 }
