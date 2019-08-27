@@ -1,14 +1,16 @@
 <template>
-  <div>
-      <h1>Login</h1>
-      <form @submit.prevent="login">
-        <ul>
-          <li><input placeholder="username" v-model="username"></li>
-          <li><input placeholder="password" v-model="password"></li>
-          <li><button type="submit">login</button></li>
-        </ul>
-      </form>
-  </div>
+  <v-app>
+    <v-content>
+      <v-form @submit.prevent="login">
+        <v-container>
+          <v-toolbar-title>Login form</v-toolbar-title>
+          <v-text-field label="username" v-model="username"></v-text-field>
+          <v-text-field label="password" v-model="password"></v-text-field>
+          <v-btn type="submit">login</v-btn>
+        </v-container>
+      </v-form>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
