@@ -17,17 +17,26 @@ const router = new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta: {
+        title: "Login"
+      }
     },
     {
       path: '/top',
       name: 'top',
       component: Top,
-      meta: { requiresAuth: true }
+      meta: {
+        title: "Top",
+        requiresAuth: true
+      }
     },
     {
       path: '/about',
       name: 'about',
+      meta: {
+        title: "About"
+      },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -44,6 +53,13 @@ router.beforeEach((to, from, next) => {
     next("login");
   } else {
     next();
+  }
+});
+
+// titleの設定
+router.afterEach((to) => {
+  if (to.meta && to.meta.title) {
+    document.title = to.meta.title
   }
 });
 
