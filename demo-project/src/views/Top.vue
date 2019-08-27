@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Top</h1>
+    <p>username: {{userName}}</p>
     <button v-on:click="logout">logout</button>
   </div>
 </template>
@@ -8,6 +9,11 @@
 <script>
 export default {
   name: 'top',
+  computed: {
+    userName() {
+      return this.$store.state.userName
+    }
+  },
   methods: {
     logout() {
       console.log("logout clicked");
